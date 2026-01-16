@@ -212,17 +212,20 @@ bot.command('start', async (ctx) => {
     console.log(`👋 /start from ${userId} (${userName})`);
     
     await ctx.reply(
-        `Привет, ${userName}! 👋\n\n` +
-        `🚀 Я помогаю продавцам маркетплейсов ПРОВЕРИТЬ идею товара ДО создания!\n\n` +
-        `✨ Как это работает:\n` +
-        `• Пройдёшь Customer Development интервью (7 вопросов)\n` +
-        `• Я помогу понять РЕАЛЕН ли спрос на твой товар\n` +
-        `• Опубликую в @aidevelopersGG — продавцы проголосуют\n` +
-        `• ТОПовые идеи разрабатываются БЕСПЛАТНО!\n\n` +
-        `💰 ТЫ ЗАРАБОТАЕШЬ: 25% от выручки если товар пойдёт в продажу!\n\n` +
-        `⚡ Хочешь УСКОРИТЬ разработку?\n` +
-        `→ 1 Star (≈2₽) = +10 голосов = попадание в ТОП!\n\n` +
-        `💡 Готов? Напиши идею цифрового товара:`,
+        `Привет, ${userName}! 🤖\n\n` +
+        `🚀 Я помогу тебе стать солопренером с ИИ-продуктом на Gaming Goods!\n\n` +
+        `⚡ Как это работает:\n` +
+        `• ИИ CTO задаст 7 вопросов Customer Development\n` +
+        `• Подготовим ТЗ для ИИ-разработки\n` +
+        `• Опубликую в @aidevelopersGG — сообщество голосует\n` +
+        `• 🏆 ТОП недели → команда ИИ (CTO+SEO+CPO) разработает БЕСПЛАТНО!\n\n` +
+        `💎 ТЫ ПОЛУЧИШЬ:\n` +
+        `✅ Готовый ИИ-продукт для продажи\n` +
+        `✅ Листинг на бирже Gaming Goods\n` +
+        `✅ 25% от каждой продажи НАВСЕГДА\n\n` +
+        `⚡ Попасть в ТОП быстрее?\n` +
+        `→ 1⭐ (≈2₽) = +10 голосов = ПРИОРИТЕТ разработки!\n\n` +
+        `🚀 Напиши идею ИИ-продукта (генерация, анализ, автоматизация для геймеров):`,
         {
             reply_markup: {
                 inline_keyboard: [
@@ -379,17 +382,17 @@ async function publishToChannel(ctx, userId, messageText, userName, userUsername
         console.log(`✅ Product saved to Supabase: ${requestId}`);
         
         // Опубликовать в канал
-        const priorityBadge = initialVotes >= 10 ? '🔥 ' : '';
+        const priorityBadge = initialVotes >= 10 ? '🏆 ' : '';
         const userMention = userUsername ? `@${userUsername}` : userName;
-        const channelMessage = `${priorityBadge}🆕 <b>НОВАЯ ИДЕЯ ТОВАРА</b>
+        const channelMessage = `${priorityBadge}🤖 <b>НОВЫЙ ИИ-ПРОДУКТ</b>
 
 💡 ${messageText}
 
-👤 Автор: ${userMention}
-💰 Заработает: 25% от выручки если товар пойдёт в продажу
+👤 Автор-солопренер: ${userMention}
+💎 Доход: 25% от каждой продажи на Gaming Goods
 
-📊 Голосуй ЗА если хочешь видеть этот товар на маркетплейсах!
-ТОП-10 идей разрабатываются БЕСПЛАТНО.
+📊 Голосуй ЗА чтобы ИИ-команда разработала этот продукт!
+🏆 ТОП НЕДЕЛИ → разработка БЕСПЛАТНО → листинг на бирже
 
 <i>🆔 ${requestId} • ${new Date().toLocaleString('ru-RU')}</i>`;
         
